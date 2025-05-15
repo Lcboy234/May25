@@ -1,8 +1,12 @@
-import random
+fruits = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears"]
+vegetables = ["Spinach", "Kale", "Tomatoes", "Celery", "Potatoes"]
+ 
+dirty_dozen = [fruits, vegetables]
 
-random_heads_or_tails = random.randint(0, 1)
+print(dirty_dozen)
 
-if random_heads_or_tails == 1:
-    print("Heads")
-else:
-    print("Tails")
+print(dirty_dozen[0])
+print(dirty_dozen[1])
+
+print(dirty_dozen[1][2])
+print(dirty_dozen[1][3])
