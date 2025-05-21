@@ -1,10 +1,10 @@
 import random
-
-# TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
+from hangman_words import word_list
+from hangman_art import stages, logo
 
 lives = 6
 
-# TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
+print(logo)
 
 chosen_word = random.choice(word_list)
 print(chosen_word)
@@ -22,11 +22,11 @@ game_over = False
 correct_letters = []
 
 while not game_over:
-    # TODO-6: - Update the code below to tell the user how many lives they have left.
-    print("****************************<???>/6 LIVES LEFT****************************")
+    print(f"****************************<???>/{lives} LIVES LEFT****************************")
     guess = input("guess a letter. ").lower()
 
-    # TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
+    if guess in correct_letters:
+        print("You have already guessed this.")
 
     display = ""
 
@@ -55,19 +55,19 @@ while not game_over:
     #  e.g. You guessed d, that's not in the word. You lose a life.
 
     if guess not in chosen_word:
+        print(f"You guessed {guess}, that's not in the word. You lose a life.")
         lives -= 1
 
         if lives == 0:
             game_over = True
 
             # TODO 7: - Update the print statement below to give the user the correct word they were trying to guess.
+            print(f"{chosen_word} is the correct word.")
             print(f"***********************YOU LOSE**********************")
 
     # until no more _ inside display the while loop is over
     if "_" not in display:
         game_over = True
         print("you win")
-
-    # TODO-2: - Update the code below to use the stages List from the file hangman_art.py
 
     print(stages[lives])
