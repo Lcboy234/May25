@@ -51,9 +51,6 @@ while not game_over:
     # print the entire display
     print(display)
 
-    # TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
-    #  e.g. You guessed d, that's not in the word. You lose a life.
-
     if guess not in chosen_word:
         print(f"You guessed {guess}, that's not in the word. You lose a life.")
         lives -= 1
