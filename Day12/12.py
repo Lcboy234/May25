@@ -30,17 +30,22 @@ def game():
     print("I'm thinking of a number between 1 and 100.")
 
     answer = random.randint(1, 101)
+
     starting_turns = choose_difficulty()
 
     guess = 0
 
     while guess != answer:
+        print(f"You have {starting_turns} attempts remaining to guess the number.")
+
         guess = int(input("Make a guess: "))
-        remaining_turns = compare(guess, answer, starting_turns)
-        if remaining_turns == 0:
+
+        starting_turns = compare(guess, answer, starting_turns)
+
+        if starting_turns == 0:
             print("Game over")
-            # end 
             return
+        
         elif guess != answer:
             print("Try again")
 
