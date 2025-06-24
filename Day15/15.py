@@ -54,6 +54,7 @@ def check_transaction_successful(money_inputted, drink_cost):
         print(f"Here is ${change} dollars in change. ")
 
         # to able to add in drink cost for money here therefore using global variable
+        # because inside define outside variable cannot be used
         global money
         money += drink_cost
         return True
