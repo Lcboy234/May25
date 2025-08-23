@@ -17,18 +17,20 @@
 #     tim.pendown()
 
 from turtle import *
+from random import *
 
 tim = Turtle()
 
 def draw(num_sides):
 
     angle = 360/ num_sides
-    
+
     for i in range(num_sides):
         tim.forward(100)
         tim.right(angle)
 
 for shape in range(3, 11):
+    tim.color(random.choice)
     draw(shape)
 
 screen = Screen()
