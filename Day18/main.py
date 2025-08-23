@@ -17,7 +17,7 @@
 #     tim.pendown()
 
 from turtle import *
-from random import *
+import random
 
 tim = Turtle()
 
@@ -30,7 +30,6 @@ def draw(num_sides):
         tim.right(angle)
 
 for shape in range(3, 11):
-    tim.color(random.choice)
     draw(shape)
 
 screen = Screen()
