@@ -23,7 +23,7 @@ def draw(gap):
 
         tim.setheading(tim.heading() + gap)
 
-draw(5)
+draw(10)
 
 screen = t.Screen()
 screen.exitonclick()
