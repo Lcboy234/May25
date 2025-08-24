@@ -6,6 +6,7 @@ tim = t.Turtle()
 # change the colourmode
 t.colormode(255)
 
+tim.speed("fastest")
 
 def random_color():
     red = random.randint(0, 255)
@@ -14,15 +15,15 @@ def random_color():
 
     return (red, green, blue)
 
-# colors = ["lemonchiffon", "darkgoldenrod", "green", "cyan", "limegreen", "lightpink", "slategrey", "brown", "plum", "deeppink", "crimson"]
-headings = [0, 90, 180, 270]
+def draw(gap):
+        
+    for i in range(int(360/ gap)):
+        tim.color(random_color())
+        tim.circle(100)
 
-tim.pensize(10)
+        tim.setheading(tim.heading() + gap)
 
-for i in range(100):
-    tim.color(random_color())
-    tim.forward(30)
-    tim.setheading(random.choice(headings))
+draw(5)
 
 screen = t.Screen()
 screen.exitonclick()
