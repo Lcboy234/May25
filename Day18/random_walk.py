@@ -1,17 +1,28 @@
 import random
-from turtle import *
+import turtle as t
 
-tim = Turtle()
+tim = t.Turtle()
 
-colors = ["lemonchiffon", "darkgoldenrod", "green", "cyan", "limegreen", "lightpink", "slategrey", "brown", "plum", "deeppink", "crimson"]
+# change the colourmode
+t.colormode(255)
+
+
+def random_color():
+    red = random.randint(0, 255)
+    green = random.randint(0, 255)
+    blue = random.randint(0, 255)
+
+    return (red, green, blue)
+
+# colors = ["lemonchiffon", "darkgoldenrod", "green", "cyan", "limegreen", "lightpink", "slategrey", "brown", "plum", "deeppink", "crimson"]
 headings = [0, 90, 180, 270]
 
 tim.pensize(10)
 
 for i in range(100):
-    tim.color(random.choice(colors))
+    tim.color(random_color())
     tim.forward(30)
     tim.setheading(random.choice(headings))
 
-screen = Screen()
+screen = t.Screen()
 screen.exitonclick()
